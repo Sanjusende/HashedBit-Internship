@@ -98,23 +98,109 @@
 
 
 
-// Q:7...........................................................................................................
+// Q:7...........................................................................................................````
+// function repeatedDigitSum(num) {
+//   const sumOfDigits = (n) => {
+//     let sum = 0;
+//     while (n > 0) {
+//       sum += n % 10;
+//       n = Math.floor(n / 10);
+//     }
+//     return sum;
+//   };
+
+//   while (num >= 10) {
+//     num = sumOfDigits(num);
+//   }
+
+//   return num;
+// }
+
+// let result = repeatedDigitSum(456);
+// console.log(result);
+
+
+
+
+// Q:8........................................................................................................
 function repeatedDigitSum(num) {
-  const sumOfDigits = (n) => {
-    let sum = 0;
-    while (n > 0) {
-      sum += n % 10;
-      n = Math.floor(n / 10);
-    }
-    return sum;
-  };
-
   while (num >= 10) {
-    num = sumOfDigits(num);
+      num = num.toString().split('').reduce((sum, digit) => sum + Number(digit), 0);
   }
-
   return num;
 }
 
-let result = repeatedDigitSum(456);
-console.log(result);
+
+console.log(repeatedDigitSum(456)); // Output: 6
+
+
+
+
+
+// Q:9...........................................................................................................................................
+function countWords(paragraph) {
+  
+  const words = paragraph.trim().split(/\s+/);
+  return words.length;
+}
+
+
+const paragraph = "This is an example paragraph to count the number of words.";
+console.log(countWords(paragraph)); 
+
+
+
+// Q:9..................................................................................................................................
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+
+const input = "Hello";
+console.log(reverseString(input));
+
+
+
+
+
+// Q:9:...........................................................................................................................................
+const students = {
+  student1: {
+      subject1: 44,
+      subject2: 56,
+      subject3: 87,
+      subject4: 97,
+      subject5: 37
+  },
+  student2: {
+      subject1: 44,
+      subject2: 56,
+      subject3: 87,
+      subject4: 97,
+      subject5: 37
+  },
+  student3: {
+      subject1: 44,
+      subject2: 56,
+      subject3: 87,
+      subject4: 97,
+      subject5: 37
+  }
+};
+
+function calculateAverages(data) {
+  const result = {};
+
+  Object.keys(data).forEach(student => {
+      const subjects = Object.values(data[student]); 
+      const total = subjects.reduce((sum, score) => sum + score, 0); 
+      const average = Math.floor(total / subjects.length);
+      result[student] = { average };
+  });
+
+  return result;
+}
+
+// Example usage:
+const averages = calculateAverages(students);
+console.log(averages);
+

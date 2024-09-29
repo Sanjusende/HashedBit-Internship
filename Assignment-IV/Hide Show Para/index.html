@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #useless-paragraph {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightgreen;
+  margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    
+    
+<h1>I am a headline made with HTML</h1>
+<br />
+<p id="useless-paragraph">Useless paragraph.</p>
+<br />
+<button onclick="toggleVisibility()">Toggle Button</button>
+<script>
+// your js code goes here
+function toggleVisibility() {
+  let x = document.getElementById("useless-paragraph")
+  if (x.style.display === "none") {
+    x.style.display = "block"
+  } else {
+    x.style.display = "none"
+  }
+}
+
+
+</script>
+</body>
+</html>

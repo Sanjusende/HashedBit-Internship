@@ -25,18 +25,25 @@ header {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-    font-size: 28px;
+.logo :hover {
+    color: #ffca28;
     font-weight: bold;
     text-transform: uppercase;
 }
-
-.social-links a {
+.logo>i{
     color: white;
-    margin-left: 15px;
+    font-size: 3rem;
+    
+}
+
+
+.social-links a  {
+    color: white;
+    margin-left: 25px;
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s;
+    font-size:x-large;
 }
 
 .social-links a:hover {
@@ -80,38 +87,55 @@ nav ul li a:hover {
 }
 
 /* Sidebar Section */
-aside {
-    width: 25%;
+aside >ul:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+    border-top:2px solid #00BD9D ;
+    border-left:2px solid #00BD9D ;
+}
+aside>ul>li>a:hover{
+
+color: #ffca28;
+
+}
+aside ul{
+    width: 15vw;
+  height: 65vh;
      background-color: #F4EBEB;
-    
-    padding: 20px;
+   margin-left: -8rem;
+    column-gap: 2rem;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-top: 50px;
+}
+aside ul li{
+    list-style-type: none;
+}
+aside ul li a {
+display:flex ;
+justify-content: center;
+align-items: center;
+gap: 10px;
+   text-decoration:none;
 }
 
-aside h2 {
-    color: #6200ea;
-    margin-bottom: 15px;
-    font-size: 24px;
-}
 
-aside p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #555;
-}
 
 /* Main Content Section */
 main {
-    width: 75%;
+    width:70vw;
     padding-left: 20px;
     display: flex;
-    gap: 20px;
+    gap: 50px;
     justify-content: space-between;
 }
 
 .content-box {
-    width: 30%;
+    width:;
     background-color: #F4EBEB;
     padding: 20px;
     border-radius: 10px;

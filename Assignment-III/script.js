@@ -1,4 +1,4 @@
-// Q.1...............................................................................................
+// // Q.1...............................................................................................
 
 // let states = ["Andhra Pradesh", "Bihar", "Uttar Pradesh", "Odisha", "Kerala", "Punjab", "Assam", "Maharashtra", "Rajasthan", "Tamil Nadu"];
 
@@ -14,7 +14,7 @@
 
 
 
-// Q.2...............................................................................................
+// // Q.2...............................................................................................
 
 // let str = 'I love my India';
 
@@ -22,7 +22,7 @@
 
 // console.log(reversedStr);
 
-// Q:3....................................................................................................
+// // Q:3....................................................................................................
 // let Str= "INDIA";
 // let arr=Str.split('');
 // console.log(arr);
@@ -34,7 +34,7 @@
 
 
 
-// Q:4.............................................................................................................
+// // Q:4.............................................................................................................
 // function correctfn(string, wrong, correct) {
 //   // replace method ko use karke wrong word ko correct word se replace karenge
 //   return string.replace(wrong, correct);
@@ -46,7 +46,7 @@
 // let correctedSentence = correctfn(sentence, wrongWord, correctWord);
 
 // console.log(correctedSentence);
-//  // Output: "I love my country"
+// //  // Output: "I love my country"
 
 
 
@@ -73,26 +73,26 @@
 
 // Q:6...............................................................................................................
 
-// const students = [
-//   { name: "Ram", scores: [80, 70, 60] },
-//   { name: "Mohan", scores: [80, 70, 90] },
-//   { name: "Sai", scores: [60, 70, 80] },
-//   { name: "Hemang", scores: [90, 90, 80, 80] },
-// ];
+const students = [
+  { name: "Ram", scores: [80, 70, 60] },
+  { name: "Mohan", scores: [80, 70, 90] },
+  { name: "Sai", scores: [60, 70, 80] },
+  { name: "Hemang", scores: [90, 90, 80, 80] },
+];
 
-// // map() ka use karke ek naya array banate hain jo average scores rakhega
-// const result = students.map(student => {
-//   // reduce() ka use karke total score calculate karte hain
-//   const totalScore = student.scores.reduce((acc, score) => acc + score, 0);
+// map() ka use karke ek naya array banate hain jo average scores rakhega
+const result = students.map(student => {
+  // reduce() ka use karke total score calculate karte hain
+  const totalScore = student.scores.reduce((acc, score) => acc + score, 0);
 
-//   // Total score ko scores ki length se divide karke average nikaalte hain
-//   const average = totalScore / student.scores.length;
+  // Total score ko scores ki length se divide karke average nikaalte hain
+  const average = totalScore / student.scores.length;
 
-//   // Har student ka naam aur average score ka naya object return karte hain
-//   return { name: student.name, average: average };
-// });
+  // Har student ka naam aur average score ka naya object return karte hain
+  return { name: student.name, average: average };
+});
 
-// console.log(result);
+console.log(result);
 
 
 
@@ -162,45 +162,45 @@ console.log(reverseString(input));
 
 
 
-// Q:9:...........................................................................................................................................
-const students = {
-  student1: {
-      subject1: 44,
-      subject2: 56,
-      subject3: 87,
-      subject4: 97,
-      subject5: 37
-  },
-  student2: {
-      subject1: 44,
-      subject2: 56,
-      subject3: 87,
-      subject4: 97,
-      subject5: 37
-  },
-  student3: {
-      subject1: 44,
-      subject2: 56,
-      subject3: 87,
-      subject4: 97,
-      subject5: 37
-  }
-};
+// // Q:9:...........................................................................................................................................
+// const students = {
+//   student1: {
+//       subject1: 44,
+//       subject2: 56,
+//       subject3: 87,
+//       subject4: 97,
+//       subject5: 37
+//   },
+//   student2: {
+//       subject1: 44,
+//       subject2: 56,
+//       subject3: 87,
+//       subject4: 97,
+//       subject5: 37
+//   },
+//   student3: {
+//       subject1: 44,
+//       subject2: 56,
+//       subject3: 87,
+//       subject4: 97,
+//       subject5: 37
+//   }
+// };
 
-function calculateAverages(data) {
-  const result = {};
+// function calculateAverages(data) {
+//   const result = {};
 
-  Object.keys(data).forEach(student => {
-      const subjects = Object.values(data[student]); 
-      const total = subjects.reduce((sum, score) => sum + score, 0); 
-      const average = Math.floor(total / subjects.length);
-      result[student] = { average };
-  });
+//   Object.keys(data).forEach(student => {
+//       const subjects = Object.values(data[student]); 
+//       const total = subjects.reduce((sum, score) => sum + score, 0); 
+//       const average = Math.floor(total / subjects.length);
+//       result[student] = { average };
+//   });
 
-  return result;
-}
+//   return result;
+// }
 
-// Example usage:
-const averages = calculateAverages(students);
-console.log(averages);
+// // Example usage:
+// const averages = calculateAverages(students);
+// console.log(averages);
 

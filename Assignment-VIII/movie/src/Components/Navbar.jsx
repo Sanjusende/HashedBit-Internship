@@ -1,33 +1,30 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Function to toggle the mobile menu
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  // Smooth scrolling function for menu links
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    setIsOpen(false); // Close menu after clicking a link (for mobile)
+    setIsOpen(false);
   };
 
-  // Handle search input change
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  // Function to handle the search form submission
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     console.log('Search Term:', searchTerm);
-    // Perform search or navigation here
+    setSearchTerm('');
   };
 
   return (
@@ -35,8 +32,8 @@ const Navbar = () => {
       <nav className="bg-gray-800 border-gray-200">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           {/* Logo Section */}
-          <a
-            href="#home"
+          <Link
+            to="/"
             className="flex items-center space-x-3"
             onClick={() => scrollToSection('home')}
           >
@@ -48,9 +45,9 @@ const Navbar = () => {
             <span className="self-center text-2xl font-semibold text-white">
               SS_Movies
             </span>
-          </a>
+          </Link>
 
-          {/* Search Bar */}
+          {/* Desktop Search Bar */}
           <form
             onSubmit={handleSearchSubmit}
             className="hidden md:flex items-center mx-4 md:w-1/3"
@@ -107,40 +104,40 @@ const Navbar = () => {
           >
             <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-gray-800">
               <li>
-                <a
-                  href="#home"
+                <Link
+                  to="/"
                   className="block py-2 px-3 text-white rounded md:bg-transparent hover:text-blue-400"
                   onClick={() => scrollToSection('home')}
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#movies"
+                <Link
+                  to="/movies"
                   className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-400"
                   onClick={() => scrollToSection('movies')}
                 >
                   Movies
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#about"
+                <Link
+                  to="/about"
                   className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-400"
                   onClick={() => scrollToSection('about')}
                 >
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#contact"
+                <Link
+                  to="/contact"
                   className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-400"
                   onClick={() => scrollToSection('contact')}
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
 
